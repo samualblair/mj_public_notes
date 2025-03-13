@@ -221,6 +221,8 @@ set interface interface-range net_mgmt_access_ports unit 0 family ethernet-switc
 ```
 
 ## Then you just define which port(s) are part of the group(s)
+
+You can add individual ports
 ```
 set interface interface-range net_mgmt_access_ports member ge-0/0/2
 set interface interface-range server_trunk_ports member ge-0/0/3
@@ -229,6 +231,12 @@ set interface interface-range server_trunk_ports member ge-0/0/5
 set interface interface-range ap_trunk_ports member mge-0/0/45
 set interface interface-range ap_trunk_ports member mge-0/0/46
 set interface interface-range ap_trunk_ports member mge-0/0/47
+```
+
+You can also add ranges
+```
+set interfaces interface-range ap_trunk_ports member-range ge-3/0/24 to ge-3/0/47
+set interfaces interface-range ap_trunk_ports member-range ge-4/0/8 to ge-3/0/15
 ```
 
 # Config cleanup - 'remove' config that makes no sense
